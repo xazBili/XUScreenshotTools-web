@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>XUScreenshotTools</title>
+<meta name="description" content="Windows 截图工具。Win+Shift+S 唤起，标注、贴图、OCR、翻译、滚动截图、历史。">
+<meta name="theme-color" content="#2b7fff">
+<link rel="icon" href="favicon.ico">
+<style>
+:root{
+  --bg:#fff;--text:#1a1a1a;--muted:#777;--line:#e2e2e2;--accent:#1054c8;
+}
+html[data-theme="dark"]{
+  --bg:#151515;--text:#e8e8e8;--muted:#8a8a8a;--line:#2c2c2c;--accent:#6da2ff;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--text);line-height:1.75;font-size:16px;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
+a:hover{border-bottom-color:currentColor}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13.5px}
+.page{max-width:680px;margin:0 auto;padding:0 24px 64px}
+
+header{padding:44px 0 0;display:flex;align-items:baseline;gap:12px;font-size:14px}
+.logo{width:28px;height:28px;border-radius:5px;align-self:center;margin-right:2px}
+.wordmark{font-weight:650;color:var(--text);font-size:15px;border:0}
+.theme{margin-left:auto;background:none;border:0;color:var(--muted);font-size:13.5px;cursor:pointer;padding:0}
+.theme:hover{color:var(--text)}
+
+h1{font-size:30px;line-height:1.3;margin:38px 0 0;font-weight:650;letter-spacing:-.01em}
+.lede{margin:14px 0 0;color:var(--muted);font-size:16.5px}
+.meta{margin:18px 0 0;font-size:13.5px;color:var(--muted)}
+.download{margin:26px 0 0;display:inline-block;background:var(--accent);color:#fff;border:0;
+  padding:11px 20px;border-radius:8px;font-size:15px;font-weight:600}
+.download:hover{opacity:.9;border:0}
+
+h2{font-size:15px;margin:44px 0 12px;font-weight:650;color:var(--muted);text-transform:none}
+p{margin:0 0 14px}
+ul{margin:0;padding:0;list-style:none}
+li{padding:6px 0;border-bottom:1px solid var(--line);font-size:15px}
+li:last-child{border-bottom:0}
+li b{font-weight:650;margin-right:8px}
+.small{font-size:13.5px;color:var(--muted)}
+.hashbox{margin-top:10px;font-size:13px;color:var(--muted);word-break:break-all}
+.hashbox button{margin-left:6px;border:1px solid var(--line);background:none;color:var(--muted);
+  border-radius:5px;padding:1px 7px;font-size:12px;cursor:pointer}
+.hashbox button:hover{color:var(--text)}
+
+footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);
+  font-size:13.5px;color:var(--muted)}
+
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,10px);background:var(--text);
+  color:var(--bg);padding:6px 14px;border-radius:6px;font-size:13.5px;opacity:0;transition:.2s;
+  pointer-events:none;z-index:9}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+
+<div class="page">
+  <header>
+    <img class="logo" src="icon.png" alt="">
+    <a class="wordmark" href="#top">XUScreenshotTools</a>
+    <button class="theme" id="themeBtn">深色模式</button>
+  </header>
+
+  <h1 id="top">一个 Windows 截图工具</h1>
+  <p class="lede">按 Win+Shift+S 框选，画完之后可以直接贴到桌面上。装着不用管它，托盘里常驻。</p>
+  <p class="meta">1.0.0 · 2026-10-06 · <span data-filesize>14.54 MB</span> · Windows 10 / 11 64 位</p>
+  <a class="download" href="XUScreenshotTools-1.0.0-setup.exe" download>下载安装包</a>
+
+  <h2>能干什么</h2>
+  <ul>
+    <li><b>热键唤起</b>Win+Shift+S，设置里可以换成别的键。</li>
+    <li><b>标注</b>矩形、箭头、画笔、马赛克、纯色遮挡、文字、序号。</li>
+    <li><b>贴图</b>截完钉在屏幕上对照着用，右键还能回到编辑。</li>
+    <li><b>OCR</b>把画面里的字提出来，直接复制。</li>
+    <li><b>翻译</b>不用选源语言，译文可以直接盖在原图上。</li>
+    <li><b>滚动截图</b>长页面自动往下滚着拼。也有延时截图和窗口捕获。</li>
+    <li><b>历史</b>截过的图留在历史里，不用重截。</li>
+    <li><b>皮肤与保存</b>多套主题，保存路径和文件名规则自己定。</li>
+  </ul>
+
+  <h2>装上和卸掉</h2>
+  <p>双击那个 exe，跟着走两步就完事了，不用管理员权限。选路径的时候它会自己建一层子文件夹，比如你把位置选到 D 盘，最后是 <code>D:\XUScreenshotTools</code>，文件不会跟别的混在一起。</p>
+  <p>卸载在开始菜单里，或者到安装目录双击 <code>uninstall.exe</code>。可以选择把设置一起清掉，也可以留着，下次重装还是原来的习惯。</p>
+  <p class="small">设置、编辑器、历史这几个窗口是 WinUI 3 画的，需要系统里有 Windows App SDK 1.7 运行时，没有的话按提示装就行。截图按钮突然不好使的时候，先看看是不是别的软件把 Win+Shift+S 抢走了。</p>
+
+  <h2>校验</h2>
+  <p class="small">不放心可以核对一下：<code>Get-FileHash XUScreenshotTools-1.0.0-setup.exe -Algorithm SHA256</code></p>
+  <div class="hashbox">
+    b8a1c4af83c801508d995b25f1b72ad99a0479c8a5a63553e927df5e77614dd3
+    <button data-copy="b8a1c4af83c801508d995b25f1b72ad99a0479c8a5a63553e927df5e77614dd3">复制</button>
+  </div>
+
+  <footer>
+    xazxu 制作，免费软件。
+  </footer>
+</div>
+
+<div class="toast" id="toast">已复制</div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var btn = document.getElementById('themeBtn');
+  var saved = localStorage.getItem('xust-theme');
+  if (saved) root.setAttribute('data-theme', saved);
+  else if (matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) root.setAttribute('data-theme', 'dark');
+
+  function label() {
+    btn.textContent = root.getAttribute('data-theme') === 'dark' ? '浅色模式' : '深色模式';
+  }
+  label();
+  btn.onclick = function () {
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('xust-theme', next);
+    label();
+  };
+
+  var toast = document.getElementById('toast');
+  var timer;
+  document.querySelectorAll('[data-copy]').forEach(function (b) {
+    b.onclick = function () {
+      var text = b.getAttribute('data-copy');
+      var done = function () {
+        toast.classList.add('show');
+        clearTimeout(timer);
+        timer = setTimeout(function () { toast.classList.remove('show'); }, 1500);
+      };
+      if (navigator.clipboard) navigator.clipboard.writeText(text).then(done);
+      else {
+        var t = document.createElement('textarea');
+        t.value = text;
+        document.body.appendChild(t);
+        t.select();
+        document.execCommand('copy');
+        t.remove();
+        done();
+      }
+    };
+  });
+
+  fetch('XUScreenshotTools-1.0.0-setup.exe', { method: 'HEAD' }).then(function (r) {
+    var len = r.headers.get('Content-Length');
+    if (!len) return;
+    document.querySelectorAll('[data-filesize]').forEach(function (el) {
+      el.textContent = (parseInt(len, 10) / 1048576).toFixed(2) + ' MB';
+    });
+  }).catch(function () {});
+})();
+</script>
+</body>
+</html>
