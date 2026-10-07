@@ -69,8 +69,8 @@ footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);
 
   <h1 id="top">一个 Windows 截图工具</h1>
   <p class="lede">按 Win+Shift+S 框选，画完之后可以直接贴到桌面上。装着不用管它，托盘里常驻。</p>
-  <p class="meta">1.0.0 · 2026-10-06 · <span data-filesize>14.54 MB</span> · Windows 10 / 11 64 位</p>
-  <a class="download" href="XUScreenshotTools-1.0.0-setup.exe" download>下载安装包</a>
+  <p class="meta">2.0.0 · 2026-10-07 · <span data-filesize>14.53 MB</span> · Windows 10 / 11 64 位</p>
+  <a class="download" href="download.html">下载</a>
 
   <h2>能干什么</h2>
   <ul>
@@ -90,10 +90,10 @@ footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);
   <p class="small">设置、编辑器、历史这几个窗口是 WinUI 3 画的，需要系统里有 Windows App SDK 1.7 运行时，没有的话按提示装就行。截图按钮突然不好使的时候，先看看是不是别的软件把 Win+Shift+S 抢走了。</p>
 
   <h2>校验</h2>
-  <p class="small">不放心可以核对一下：<code>Get-FileHash XUScreenshotTools-1.0.0-setup.exe -Algorithm SHA256</code></p>
+  <p class="small">不放心可以核对一下：<code>Get-FileHash XUScreenshotTools-2.0.0-setup.exe -Algorithm SHA256</code></p>
   <div class="hashbox">
-    b8a1c4af83c801508d995b25f1b72ad99a0479c8a5a63553e927df5e77614dd3
-    <button data-copy="b8a1c4af83c801508d995b25f1b72ad99a0479c8a5a63553e927df5e77614dd3">复制</button>
+    57edb4a85dd36af2836e994f99b92874ea6b751b64385e0fe88435c3365c7181
+    <button data-copy="57edb4a85dd36af2836e994f99b92874ea6b751b64385e0fe88435c3365c7181">复制</button>
   </div>
 
   <footer>
@@ -145,7 +145,7 @@ footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);
     };
   });
 
-  fetch('XUScreenshotTools-1.0.0-setup.exe', { method: 'HEAD' }).then(function (r) {
+  fetch('XUScreenshotTools-2.0.0-setup.exe', { method: 'HEAD' }).then(function (r) {
     var len = r.headers.get('Content-Length');
     if (!len) return;
     document.querySelectorAll('[data-filesize]').forEach(function (el) {
