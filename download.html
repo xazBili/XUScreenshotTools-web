@@ -3,68 +3,79 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>下载 XUScreenshotTools</title>
-<meta name="description" content="XUScreenshotTools 安装包下载，Windows 10 / 11 64 位。">
+<title>XUScreenshotTools 2.0.0 下载</title>
+<meta name="description" content="XUScreenshotTools 2.0.0 安装包下载，Windows 10 / 11 64 位。">
 <meta name="theme-color" content="#2b7fff">
 <link rel="icon" href="favicon.ico">
 <style>
 :root{
-  --bg:#fff;--text:#1a1a1a;--muted:#777;--line:#e2e2e2;--accent:#1054c8;
+  --bg:#fff;--text:#1a1a1a;--muted:#777;--line:#e2e2e2;--soft:#f6f6f6;--accent:#1054c8;
 }
 html[data-theme="dark"]{
-  --bg:#151515;--text:#e8e8e8;--muted:#8a8a8a;--line:#2c2c2c;--accent:#6da2ff;
+  --bg:#151515;--text:#e8e8e8;--muted:#8a8a8a;--line:#2c2c2c;--soft:#1d1d1d;--accent:#6da2ff;
 }
 *{box-sizing:border-box}
 body{
-  margin:0;background:var(--bg);color:var(--text);line-height:1.75;font-size:16px;
+  margin:0;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
 }
 a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
 a:hover{border-bottom-color:currentColor}
 code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13.5px}
-.page{max-width:680px;margin:0 auto;padding:0 24px 64px}
+.page{max-width:860px;margin:0 auto;padding:0 24px 64px}
 
-header{padding:44px 0 0;display:flex;align-items:baseline;gap:12px;font-size:14px}
-.logo{width:28px;height:28px;border-radius:5px;align-self:center;margin-right:2px}
+header{padding:28px 0 0;display:flex;align-items:baseline;gap:12px;font-size:14px}
+.logo{width:26px;height:26px;border-radius:5px;align-self:center;margin-right:2px}
 .wordmark{font-weight:650;color:var(--text);font-size:15px;border:0}
 .theme{margin-left:auto;background:none;border:0;color:var(--muted);font-size:13.5px;cursor:pointer;padding:0}
 .theme:hover{color:var(--text)}
 
-h1{font-size:30px;line-height:1.3;margin:38px 0 0;font-weight:650;letter-spacing:-.01em}
-.lede{margin:14px 0 0;color:var(--muted);font-size:16.5px}
-
-h2{font-size:15px;margin:44px 0 12px;font-weight:650;color:var(--muted)}
+.page-title{font-size:30px;line-height:1.25;margin:34px 0 0;font-weight:650;letter-spacing:-.01em}
+h2.page-title{font-size:21px;margin:38px 0 14px;padding:0}
 p{margin:0 0 14px}
+.release-date{margin:12px 0 0;font-size:15px}
+.release-date strong{font-weight:650}
+.lede{margin:14px 0 0;color:var(--muted);font-size:16px}
+
+.featured-downloads-list{margin:0;display:flex;flex-wrap:wrap;gap:14px}
+.featured-download-box{flex:1 1 260px;border:1px solid var(--line);border-radius:10px;
+  padding:16px 18px 18px;background:var(--soft)}
+.featured-download-box h3{margin:0 0 12px;font-size:15px;font-weight:650;color:var(--muted)}
+.download-buttons{margin:0}
+.button{display:inline-block;border:0;background:var(--accent);color:#fff;border-radius:8px;
+  padding:10px 18px;font-size:15px;font-weight:600}
+.button:hover{opacity:.9;border:0;color:#fff}
+
+table{width:100%;border-collapse:collapse;font-size:14px;margin:6px 0 0}
+th{text-align:left;font-weight:650;font-size:13px;color:var(--muted);background:var(--soft);
+  padding:9px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
+td.os,td.size{white-space:nowrap}
+td.size{color:var(--muted)}
+.file{word-break:break-all}
+.hash{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;color:var(--muted);word-break:break-all}
+.hash button{margin-left:6px;border:1px solid var(--line);background:none;color:var(--muted);
+  border-radius:5px;padding:1px 7px;font-size:12px;cursor:pointer;font-family:inherit}
+.hash button:hover{color:var(--text)}
+
 .small{font-size:13.5px;color:var(--muted)}
-
-.release{margin:26px 0 0}
-.release-no{font-size:26px;font-weight:650;line-height:1.2}
-.release-date{margin:4px 0 0;font-size:13.5px;color:var(--muted)}
-.download{margin:18px 0 0;display:inline-block;background:var(--accent);color:#fff;border:0;
-  padding:11px 20px;border-radius:8px;font-size:15px;font-weight:600}
-.download:hover{opacity:.9;border:0}
-.note{margin:10px 0 0;font-size:13.5px;color:var(--muted)}
-
-table{margin:16px 0 0;width:100%;border-collapse:collapse;font-size:14px}
-th{text-align:left;font-weight:650;font-size:12.5px;color:var(--muted);
-  padding:0 12px 6px 0;border-bottom:1px solid var(--line);white-space:nowrap}
-td{padding:10px 12px 10px 0;border-bottom:1px solid var(--line);vertical-align:top}
-tr:last-child td{border-bottom:0}
-td.file{word-break:break-all}
-td.size,td.kind{white-space:nowrap;color:var(--muted)}
-
-.hashbox{margin-top:8px;font-size:13px;color:var(--muted);word-break:break-all}
-.hashbox button{margin-left:6px;border:1px solid var(--line);background:none;color:var(--muted);
-  border-radius:5px;padding:1px 7px;font-size:12px;cursor:pointer}
-.hashbox button:hover{color:var(--text)}
-
-footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);
+footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);
   font-size:13.5px;color:var(--muted)}
 
 .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,10px);background:var(--text);
   color:var(--bg);padding:6px 14px;border-radius:6px;font-size:13.5px;opacity:0;transition:.2s;
   pointer-events:none;z-index:9}
 .toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media (max-width:640px){
+  table,thead,tbody,tr,td,th{display:block}
+  thead{display:none}
+  td{border-bottom:0;padding:2px 0}
+  tbody tr{padding:14px 0;border-bottom:1px solid var(--line)}
+  td.os::before{content:"系统：";color:var(--muted)}
+  td.size::before{content:"大小：";color:var(--muted)}
+}
 </style>
 </head>
 <body>
@@ -76,45 +87,47 @@ footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);
     <button class="theme" id="themeBtn">深色模式</button>
   </header>
 
-  <h1>下载</h1>
-  <p class="lede">Windows 10 / 11 64 位的安装包，双击就能装，不用管理员权限。</p>
+  <h1 class="page-title">XUScreenshotTools <span data-latest>2.0.0</span></h1>
 
-  <div class="release">
-    <div class="release-no">XUScreenshotTools <span data-latest>2.0.0</span></div>
-    <p class="release-date">发布日期：<span data-latest-date>2026-10-07</span></p>
-    <a class="download" data-latest href="XUScreenshotTools-2.0.0-setup.exe" download>下载安装包</a>
-    <p class="note">体积 <span data-filesize>14.53 MB</span>。装完在托盘里，按 Win+Shift+S 唤起。</p>
+  <p class="release-date"><strong>发布日期：</strong><span data-latest-date>2026-10-07</span></p>
+  <p class="lede">Windows 10 / 11 64 位的安装包，双击就装，不用管理员权限。装完在托盘里常驻，按 Win+Shift+S 唤起。</p>
+
+  <h2 class="page-title">Files</h2>
+
+  <div class="featured-downloads-list">
+    <div class="featured-download-box">
+      <h3>Windows</h3>
+      <p class="download-buttons">
+        <a class="button" data-latest href="XUScreenshotTools-2.0.0-setup.exe" download>下载 Windows 安装包（64 位）</a>
+      </p>
+    </div>
   </div>
-
-  <h2>文件</h2>
 
   <table>
     <thead>
       <tr>
         <th>版本</th>
-        <th>文件</th>
-        <th>系统</th>
-        <th>大小</th>
-        <th>SHA256</th>
+        <th>操作系统</th>
+        <th>说明</th>
+        <th>文件大小</th>
+        <th>SHA256 校验值</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td><span data-latest-ver>2.0.0</span></td>
-        <td class="file"><a href="XUScreenshotTools-2.0.0-setup.exe" download>XUScreenshotTools-2.0.0-setup.exe</a></td>
-        <td class="kind">Windows 64 位</td>
+        <td class="os">Windows</td>
+        <td class="file"><a href="XUScreenshotTools-2.0.0-setup.exe" download>XUScreenshotTools-2.0.0-setup.exe</a><br>安装程序，64 位</td>
         <td class="size"><span data-filesize>14.53 MB</span></td>
-        <td>
-          <div class="hashbox" data-latest-hash>
-            <span data-latest-sha>57edb4a85dd36af2836e994f99b92874ea6b751b64385e0fe88435c3365c7181</span>
-            <button data-copy="57edb4a85dd36af2836e994f99b92874ea6b751b64385e0fe88435c3365c7181">复制</button>
-          </div>
+        <td class="hash">
+          <span data-latest-sha>57edb4a85dd36af2836e994f99b92874ea6b751b64385e0fe88435c3365c7181</span>
+          <button data-copy="57edb4a85dd36af2836e994f99b92874ea6b751b64385e0fe88435c3365c7181">复制</button>
         </td>
       </tr>
     </tbody>
   </table>
 
-  <p class="small" style="margin-top:24px">
+  <p class="small" style="margin-top:26px">
     想核对一下就跑：<code>Get-FileHash XUScreenshotTools-2.0.0-setup.exe -Algorithm SHA256</code>
   </p>
 
