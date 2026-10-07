@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>下载 XUScreenshotTools</title>
-<meta name="description" content="XUScreenshotTools 各版本安装包下载。">
+<meta name="description" content="XUScreenshotTools 安装包下载，Windows 10 / 11 64 位。">
 <meta name="theme-color" content="#2b7fff">
 <link rel="icon" href="favicon.ico">
 <style>
@@ -36,22 +36,27 @@ h1{font-size:30px;line-height:1.3;margin:38px 0 0;font-weight:650;letter-spacing
 h2{font-size:15px;margin:44px 0 12px;font-weight:650;color:var(--muted)}
 p{margin:0 0 14px}
 .small{font-size:13.5px;color:var(--muted)}
-.hashbox{margin-top:10px;font-size:13px;color:var(--muted);word-break:break-all}
+
+.release{margin:26px 0 0}
+.release-no{font-size:26px;font-weight:650;line-height:1.2}
+.release-date{margin:4px 0 0;font-size:13.5px;color:var(--muted)}
+.download{margin:18px 0 0;display:inline-block;background:var(--accent);color:#fff;border:0;
+  padding:11px 20px;border-radius:8px;font-size:15px;font-weight:600}
+.download:hover{opacity:.9;border:0}
+.note{margin:10px 0 0;font-size:13.5px;color:var(--muted)}
+
+table{margin:16px 0 0;width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;font-weight:650;font-size:12.5px;color:var(--muted);
+  padding:0 12px 6px 0;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:10px 12px 10px 0;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.file{word-break:break-all}
+td.size,td.kind{white-space:nowrap;color:var(--muted)}
+
+.hashbox{margin-top:8px;font-size:13px;color:var(--muted);word-break:break-all}
 .hashbox button{margin-left:6px;border:1px solid var(--line);background:none;color:var(--muted);
   border-radius:5px;padding:1px 7px;font-size:12px;cursor:pointer}
 .hashbox button:hover{color:var(--text)}
-
-.ver{padding:20px 0;border-bottom:1px solid var(--line)}
-.ver:last-of-type{border-bottom:0}
-.ver-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-.ver-no{font-size:19px;font-weight:650}
-.tag{font-size:12px;color:var(--accent);border:1px solid var(--accent);border-radius:4px;
-  padding:0 6px;line-height:1.6}
-.ver-meta{font-size:13.5px;color:var(--muted)}
-.download{margin:14px 0 0;display:inline-block;background:var(--accent);color:#fff;border:0;
-  padding:9px 18px;border-radius:8px;font-size:15px;font-weight:600}
-.download:hover{opacity:.9;border:0}
-.download.plain{background:none;color:var(--accent);border:1px solid var(--line);font-weight:500}
 
 footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);
   font-size:13.5px;color:var(--muted)}
@@ -72,38 +77,45 @@ footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);
   </header>
 
   <h1>下载</h1>
-  <p class="lede">挑一个版本。都是 Windows 10 / 11 64 位的安装包，双击就能装，不用管理员权限。</p>
+  <p class="lede">Windows 10 / 11 64 位的安装包，双击就能装，不用管理员权限。</p>
 
-  <h2>最新的</h2>
-
-  <div class="ver">
-    <div class="ver-head">
-      <span class="ver-no">2.0.0</span>
-      <span class="tag">最新</span>
-      <span class="ver-meta"><span data-latest-date>2026-10-07</span> · <span data-filesize>14.53 MB</span></span>
-    </div>
+  <div class="release">
+    <div class="release-no">XUScreenshotTools <span data-latest>2.0.0</span></div>
+    <p class="release-date">发布日期：<span data-latest-date>2026-10-07</span></p>
     <a class="download" data-latest href="XUScreenshotTools-2.0.0-setup.exe" download>下载安装包</a>
-    <div class="hashbox" data-latest-hash>
-      <span data-latest-sha>57edb4a85dd36af2836e994f99b92874ea6b751b64385e0fe88435c3365c7181</span>
-    </div>
+    <p class="note">体积 <span data-filesize>14.53 MB</span>。装完在托盘里，按 Win+Shift+S 唤起。</p>
   </div>
 
-  <h2>以前的</h2>
+  <h2>文件</h2>
 
-  <div class="ver">
-    <div class="ver-head">
-      <span class="ver-no">1.0.0</span>
-      <span class="ver-meta">2026-10-06 · 14.54 MB</span>
-    </div>
-    <a class="download plain" href="XUScreenshotTools-1.0.0-setup.exe" download>下载安装包</a>
-    <div class="hashbox">
-      b8a1c4af83c801508d995b25f1b72ad99a0479c8a5a63553e927df5e77614dd3
-      <button data-copy="b8a1c4af83c801508d995b25f1b72ad99a0479c8a5a63553e927df5e77614dd3">复制</button>
-    </div>
-  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>版本</th>
+        <th>文件</th>
+        <th>系统</th>
+        <th>大小</th>
+        <th>SHA256</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span data-latest-ver>2.0.0</span></td>
+        <td class="file"><a href="XUScreenshotTools-2.0.0-setup.exe" download>XUScreenshotTools-2.0.0-setup.exe</a></td>
+        <td class="kind">Windows 64 位</td>
+        <td class="size"><span data-filesize>14.53 MB</span></td>
+        <td>
+          <div class="hashbox" data-latest-hash>
+            <span data-latest-sha>57edb4a85dd36af2836e994f99b92874ea6b751b64385e0fe88435c3365c7181</span>
+            <button data-copy="57edb4a85dd36af2836e994f99b92874ea6b751b64385e0fe88435c3365c7181">复制</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
-  <p class="small" style="margin-top:28px">
-    不放心可以核对一下：<code>Get-FileHash XUScreenshotTools-2.0.0-setup.exe -Algorithm SHA256</code>
+  <p class="small" style="margin-top:24px">
+    想核对一下就跑：<code>Get-FileHash XUScreenshotTools-2.0.0-setup.exe -Algorithm SHA256</code>
   </p>
 
   <footer>
@@ -157,7 +169,7 @@ footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);
     };
   });
 
-  var latest = document.querySelector('[data-latest]');
+  var latest = document.querySelector('[data-latest][href]');
   if (latest) {
     fetch(latest.getAttribute('href'), { method: 'HEAD' }).then(function (r) {
       var len = r.headers.get('Content-Length');
